@@ -25,7 +25,7 @@ jobs:
 
       - name: Build APK
         run: |
-          buildozer init
+          # Asegurar que buildozer.spec tenga los requisitos correctos
           sed -i 's/requirements = python3,kivy/requirements = python3,kivy,requests/' buildozer.spec
           sed -i 's/# android.permissions = INTERNET/android.permissions = INTERNET/' buildozer.spec
           yes y | buildozer -v android debug
